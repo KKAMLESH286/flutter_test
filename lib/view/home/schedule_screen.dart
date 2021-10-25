@@ -49,11 +49,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     startTimer();
      randomNumber = next(5,15);
      setNewNumber();
-     
-     if(_start == 0){
-       Get.snackbar("title", "message");
-     }
-    
   }
 
 
@@ -179,16 +174,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     );
   }
 
-  TableRow newTableRow(
-      {String date, String time, String availability, String status}) {
-    return TableRow(children: [
-      Text(date, textScaleFactor: 1),
-      Text(time, textScaleFactor: 1),
-      Text(availability.toString(), textScaleFactor: 1),
-      TextButton(onPressed: (){}, child: Text(status, textScaleFactor: 1), style: ButtonStyle(backgroundColor: MaterialStateProperty.resolveWith(getColor),),)
-      ,
-    ]);
-  }
 
   Widget myAppBarIcon(ImageProvider<Object> icon, String count) {
   return Container(
@@ -227,16 +212,4 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     ),
   );
 }
-}
-
-
-
-TableRow newTableRow(
-    {String date, String time, int availability, String status}) {
-  return TableRow(children: [
-    Text(date, textScaleFactor: 1),
-    Text(time, textScaleFactor: 1),
-    Text(availability.toString(), textScaleFactor: 1),
-    Text(status, textScaleFactor: 1),
-  ]);
 }
